@@ -60,5 +60,24 @@ class RestaurantTest {
         assertEquals(388,restaurant.calculateOrderValue(lstMenu));
     }
 
+    //This is failing test cases
+    @Test
+    public void get_failed_total_cost_of_the_menu_selected() {
+        List<String> lstMenu = new LinkedList<String> (){{ add("Sweet corn soup"); add("Vegetable lasagne");}};
+        assertEquals(300,restaurant.calculateOrderValue(lstMenu));
+    }
+
+    @Test
+    public void get_failed_when_we_add_only_one_item_total() {
+        List<String> lstMenu = new LinkedList<String> (){{ add("Sweet corn soup");}};
+        assertEquals(388,restaurant.calculateOrderValue(lstMenu));
+    }
+
+
+    @Test
+    public void get_cost_when_we_send_empty_list() {
+        List<String> lstMenu = new LinkedList<String> (){};
+        assertEquals(388,restaurant.calculateOrderValue(lstMenu));
+    }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
